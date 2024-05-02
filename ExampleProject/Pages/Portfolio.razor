@@ -1,0 +1,89 @@
+﻿@page "/portfolioComposition"
+@using System.IO
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Charts
+@using ExampleProject.Data;
+
+@inject PortfolioService portfolioService
+
+<PageTitle>Portfolio Composition</PageTitle>
+
+<h1>Portfolio Composition</h1>
+
+<SfChart Title="Portfolio Composition">
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" Title="Date"></ChartPrimaryXAxis>
+    <ChartPrimaryYAxis Title="Portfolio Value"></ChartPrimaryYAxis>
+    <ChartSeriesCollection>
+        <ChartSeries DataSource="@getLineChart()" XName="Date" YName="PortfolioValue" Type="ChartSeriesType.Line">
+        </ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
+
+<SfAccumulationChart Title="Pie Chart" Width="60%">
+    <AccumulationChartSeriesCollection>
+        <AccumulationChartSeries DataSource="@getPieChart()" XName="Name" YName="Value"
+                                 Name="Name" PointColorMapping="Fill">
+            <AccumulationDataLabelSettings Visible="true"></AccumulationDataLabelSettings>
+        </AccumulationChartSeries>
+    </AccumulationChartSeriesCollection>
+    <AccumulationChartLegendSettings Visible="true"></AccumulationChartLegendSettings>
+</SfAccumulationChart>
+
+    @code {
+
+        public class PortfolioComposition
+        {
+            public string Date { get; set; }
+            public decimal PortfolioValue { get; set; }
+        }
+
+        public class PieChartValues
+        {
+            public string Name { get; set; }
+            public decimal Value { get; set; }
+        }
+
+        public List<PortfolioComposition> getLineChart()
+        {
+            List<PortfolioComposition> portfolioCompList = new List<PortfolioComposition>();
+            PortfolioComposition portfolioComp = null;
+            List<ExampleProject.Data.Portfolio> portfolios = new List<ExampleProject.Data.Portfolio>();
+            portfolios = portfolioService.processData();
+            for (int i = 0; i < portfolios.Count; i++)
+            {
+                portfolioComp = new PortfolioComposition();
+                portfolioComp.Date = portfolios[i].date;
+                portfolioComp.PortfolioValue = portfolios[i].portfolioValue;
+                portfolioCompList.Add(portfolioComp);
+            }
+            return portfolioCompList;
+        }
+
+        public List<PieChartValues> getPieChart()
+        {
+            List<PieChartValues> pieChartValues = new List<PieChartValues>();
+            PieChartValues pie = null;
+            List<ExampleProject.Data.Portfolio> portfolios = new List<ExampleProject.Data.Portfolio>();
+            portfolios = portfolioService.processData();
+            for (int i = portfolios.Count-1; i >= 0; i--)
+            {
+                pie = new PieChartValues();
+                pie.Name = "Cash";
+                pie.Value = portfolios[i].cashValue;
+                pieChartValues.Add(pie);
+                pie = new PieChartValues();
+                pie.Name = "ULVR";
+                pie.Value = portfolios[i].ulvrValue;
+                pieChartValues.Add(pie);
+                pie = new PieChartValues();
+                pie.Name = "VOD";
+                pie.Value = portfolios[i].vodValue;
+                pieChartValues.Add(pie);
+                break;
+            }
+            return pieChartValues;
+        }
+
+    }
+

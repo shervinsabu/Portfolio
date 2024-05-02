@@ -1,0 +1,62 @@
+﻿@page "/uploadStock"
+@using System.IO
+@using Syncfusion.Blazor.Inputs
+@using ExampleProject.Data;
+
+@inject StockPriceInterface stockPriceService
+
+<PageTitle>Stock Price</PageTitle>
+
+<h1>Stock Price Upload</h1>
+
+Please upload a file.
+
+<SfUploader @ref="uploadobj" AutoUpload="false">
+    <UploaderEvents ValueChange="OnChange" OnActionComplete="onActionComplete"></UploaderEvents>
+</SfUploader>
+<input type="button" value="Click to Upload" @onclick="UploadClick" />
+
+<input type ="button" value="Delete" @onclick="DeleteData"/>
+
+<p>@valuechangemethod</p>
+<p>@ActionCompletemethod</p>
+
+@code {
+    public string ActionCompletemethod { get; set; }
+    public string valuechangemethod { get; set; }
+    SfUploader uploadobj;
+
+    private async void OnChange(UploadChangeEventArgs args)
+    {
+        this.valuechangemethod = "ValueChange event triggered";
+        foreach (var file in args.Files)
+        {
+            var path = @"/Users/shervin/Documents/" + file.FileInfo.Name;
+            FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.Write);
+            await file.File.OpenReadStream(long.MaxValue).CopyToAsync(filestream);
+            await stockPriceService.UploadStockPrices(path);
+            filestream.Close();
+        }
+    }
+
+    public async Task onActionComplete()
+    {
+        this.ActionCompletemethod = "Action Complete event is triggered";
+
+    }
+    public async Task UploadClick()
+    {
+        this.uploadobj.UploadAsync();
+        this.DynamicMethod();
+    }
+    public void DynamicMethod()
+    {
+
+    }
+
+    public async Task DeleteData()
+    {
+        await stockPriceService.DeleteFileFromDB();
+    }
+}
+

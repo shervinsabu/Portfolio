@@ -1,0 +1,65 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ExampleProject
+build_property.RootNamespace = ExampleProject
+build_property.ProjectDir = /Users/shervin/Projects/ExampleProject/ExampleProject/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/shervin/Projects/ExampleProject/ExampleProject
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/Portfolio.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUG9ydGZvbGlvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/StockPrice.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RvY2tQcmljZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-lv7ywmi6a1
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-5ibokcpb3r
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/shervin/Projects/ExampleProject/ExampleProject/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
