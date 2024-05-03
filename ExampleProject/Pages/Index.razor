@@ -32,7 +32,7 @@ Please upload a file.
         this.valuechangemethod = "ValueChange event triggered";
         foreach (var file in args.Files)
         {
-            var path = @"/Users/shervin/Documents/" + file.FileInfo.Name;
+            var path = @"K:\" + file.FileInfo.Name;
             FileStream filestream = new FileStream(path, FileMode.Create, FileAccess.Write);
             await file.File.OpenReadStream(long.MaxValue).CopyToAsync(filestream);
             await transactionService.UploadFiletoDB(path);
